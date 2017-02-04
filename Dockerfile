@@ -19,6 +19,7 @@ WORKDIR /kb/module
 RUN pip install --upgrade requests==2.7.0
 RUN pip freeze | grep requests
 
+RUN chmod -R a+rw /kb/module
 RUN make
 
 ENTRYPOINT [ "./scripts/entrypoint.sh" ]
